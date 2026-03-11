@@ -1,3 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-brand-black: #0a0a0a;
+  --color-brand-gray: #1a1a1a;
+  --color-brand-gold: #D4AF37;
+  --color-brand-gold-light: #F3E5AB;
+}
