@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { MapPin, Phone, Mail, Instagram, Facebook, MessageCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import logo from './assets/logo.png'; 
 
 export default function Footer() {
@@ -66,7 +67,12 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="border-t border-brand-gray pt-8 text-center">
-          <p className="text-gray-600 text-sm">&copy; {new Date().getFullYear()} Raskon Appart. {t('footer.rights')}</p>
+          <p className="text-gray-600 text-sm mb-4">&copy; {new Date().getFullYear()} Raskon Appart. {t('footer.rights')}</p>
+          <div className="flex flex-wrap justify-center gap-6 text-sm mb-4">
+            <Link to="/terms" className="text-gray-400 hover:text-brand-gold transition duration-300">Terms & Conditions</Link>
+            <Link to="/privacy" className="text-gray-400 hover:text-brand-gold transition duration-300">Privacy Policy</Link>
+          </div>
+          <p className="text-gray-600 text-xs">Built by <a href="https://irsystems.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-brand-gold hover:text-white font-semibold transition duration-300">IR SYSTEMS</a></p>
         </div>
       </div>
     </footer>

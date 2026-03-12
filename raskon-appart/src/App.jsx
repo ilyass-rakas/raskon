@@ -1,14 +1,12 @@
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MessageCircle } from 'lucide-react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './Navbar';
-import Hero from './Hero';
-import Amenities from './Amenities';
-import ApartmentGrid from './ApartmentGrid';
-import LocationMap from './LocationMap';
-import Reviews from './Reviews';
-import FAQ from './FAQ';
 import Footer from './Footer';
+import Home from './pages/Home';
+import Terms from './pages/Terms';
+import Privacy from './pages/Privacy';
 
 function App() {
   const { i18n } = useTranslation();
@@ -44,28 +42,31 @@ function App() {
   }, [i18n.language]);
 
   return (
-    <div className="font-sans bg-brand-black min-h-screen">
-      <Navbar />
-      <Hero />
-      <Amenities />
-      <ApartmentGrid />
-      <LocationMap />
-      <Reviews />
-      <FAQ />
-      <Footer />
+    <BrowserRouter>
+      <div className="font-sans bg-brand-black min-h-screen">
+        <Navbar />
+        
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/privacy" element={<Privacy />} />
+        </Routes>
 
-      {/* Floating WhatsApp Button */}
-      <a
-        href="https://wa.me/212666802976"
-        target="_blank"
-        rel="noreferrer"
-        className="fixed bottom-6 ltr:right-6 rtl:left-6 z-40 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg transition duration-300 hover:scale-110 flex items-center justify-center"
-        aria-label="Contact us on WhatsApp"
-        title="Chat with us on WhatsApp"
-      >
-        <MessageCircle className="w-6 h-6" />
-      </a>
-    </div>
+        <Footer />
+
+        {/* Floating WhatsApp Button */}
+        <a
+          href="https://wa.me/212666802976"
+          target="_blank"
+          rel="noreferrer"
+          className="fixed bottom-6 ltr:right-6 rtl:left-6 z-40 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg transition duration-300 hover:scale-110 flex items-center justify-center"
+          aria-label="Contact us on WhatsApp"
+          title="Chat with us on WhatsApp"
+        >
+          <MessageCircle className="w-6 h-6" />
+        </a>
+      </div>
+    </BrowserRouter>
   );
 }
 

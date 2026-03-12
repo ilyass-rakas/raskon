@@ -48,6 +48,7 @@ export default function Lightbox({ isOpen, images, initialIndex, onClose }) {
           src={images[currentIndex]}
           alt={`Gallery image ${currentIndex + 1}`}
           className="max-w-4xl max-h-[90vh] object-contain"
+          loading="lazy"
         />
 
         {/* Navigation Buttons */}
