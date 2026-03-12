@@ -1,6 +1,42 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import apt1_1 from './assets/apt1_1.jpg';
+import apt1_2 from './assets/apt1_2.jpg';
+import apt1_3 from './assets/apt1_3.jpg';
+import apt1_4 from './assets/apt1_4.jpg';
+import apt1_5 from './assets/apt1_5.jpg';
+import apt1_6 from './assets/apt1_6.jpg';
+import apt1_7 from './assets/apt1_7.jpg';
+import apt1_8 from './assets/apt1_8.jpg';
+import apt1_9 from './assets/apt1_9.jpg';
+import apt2_1 from './assets/apt2_1.jpg';
+import apt2_2 from './assets/apt2_2.jpg';
+import apt2_3 from './assets/apt2_3.jpg';
+import apt2_4 from './assets/apt2_4.jpg';
+import apt2_5 from './assets/apt2_5.jpg';
+import apt2_6 from './assets/apt2_6.jpg';
+import apt2_7 from './assets/apt2_7.jpg';
+import apt2_8 from './assets/apt2_8.jpg';
+import apt2_9 from './assets/apt2_9.jpg';
+import apt2_10 from './assets/apt2_10.jpg';
+import apt3_1 from './assets/apt3_1.jpg';
+import apt3_2 from './assets/apt3_2.jpg';
+import apt3_3 from './assets/apt3_3.jpg';
+import apt3_4 from './assets/apt3_4.jpg';
+import apt3_5 from './assets/apt3_5.jpg';
+import apt3_6 from './assets/apt3_6.jpg';
+import apt3_7 from './assets/apt3_7.jpg';
+import apt3_8 from './assets/apt3_8.jpg';
+import apt3_9 from './assets/apt3_9.jpg';
+import apt3_10 from './assets/apt3_10.jpg';
+import apt3_11 from './assets/apt3_11.jpg';
+import apt3_12 from './assets/apt3_12.jpg';
+import apt3_13 from './assets/apt3_13.jpg';
+import apt3_14 from './assets/apt3_14.jpg';
+import apt3_15 from './assets/apt3_15.jpg';
+import apt3_16 from './assets/apt3_16.jpg';
+import apt3_17 from './assets/apt3_17.jpg';
 
 function ApartmentCard({ apt, t }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -75,33 +111,21 @@ export default function ApartmentGrid() {
       nameKey: 'apartments.apt1',
       priceKey: 'apartments.apt1.price',
       specsKey: 'apartments.apt1.specs',
-      images: [
-        "https://images.unsplash.com/photo-1502672260266-1c1de2d92004?q=80&w=1000&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1000&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1493857671505-72967e2e2760?q=80&w=1000&auto=format&fit=crop"
-      ]
+      images: [apt1_1, apt1_2, apt1_3, apt1_4, apt1_5, apt1_6, apt1_7, apt1_8, apt1_9]
     },
     {
       id: 2,
       nameKey: 'apartments.apt2',
       priceKey: 'apartments.apt2.price',
       specsKey: 'apartments.apt2.specs',
-      images: [
-        "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1000&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1524228211496-72897b973203?q=80&w=1000&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1502672260266-1c1de2d92004?q=80&w=1000&auto=format&fit=crop"
-      ]
+      images: [apt2_1, apt2_2, apt2_3, apt2_4, apt2_5, apt2_6, apt2_7, apt2_8, apt2_9, apt2_10]
     },
     {
       id: 3,
       nameKey: 'apartments.apt3',
       priceKey: 'apartments.apt3.price',
       specsKey: 'apartments.apt3.specs',
-      images: [
-        "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?q=80&w=1000&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1575876657514-494f7bf24b85?q=80&w=1000&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1493857671505-72967e2e2760?q=80&w=1000&auto=format&fit=crop"
-      ]
+      images: [apt3_1, apt3_2, apt3_3, apt3_4, apt3_5, apt3_6, apt3_7, apt3_8, apt3_9, apt3_10, apt3_11, apt3_12, apt3_13, apt3_14, apt3_15, apt3_16, apt3_17]
     }
   ];
 
