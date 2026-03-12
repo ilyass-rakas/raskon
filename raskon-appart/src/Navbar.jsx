@@ -17,7 +17,9 @@ export default function Navbar() {
           
           {/* LOGO */}
           <div className="flex-shrink-0 flex items-center">
-            <img src={logo} alt="Raskon Appart Logo" className="h-16 w-auto object-contain" />
+            <a href="/" className="hover:opacity-80 transition duration-300">
+              <img src={logo} alt="Raskon Appart Logo" className="h-16 w-auto object-contain" />
+            </a>
           </div>
           
           {/* DESKTOP MENU */}
