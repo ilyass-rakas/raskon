@@ -56,7 +56,7 @@ export default function Footer() {
                 <Instagram className="w-5 h-5" />
                 <span>Instagram</span>
               </a>
-              <a href="https://web.facebook.com/yassirraskon" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-gray-400 hover:text-brand-gold transition duration-300">
+              <a href="https://www.facebook.com/share/17RtuPg6gv/?mibextid=wwXIfr" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-gray-400 hover:text-brand-gold transition duration-300">
                 <Facebook className="w-5 h-5" />
                 <span>Facebook</span>
               </a>

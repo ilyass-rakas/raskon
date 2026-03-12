@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { MessageCircle, Phone } from 'lucide-react';
 import logo from './assets/logo.png';
+import Weather from './Weather';
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -12,6 +13,9 @@ export default function Hero() {
         style={{ backgroundImage: "url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2070&auto=format&fit=crop')" }}
       ></div>
       <div className="relative z-10 text-center px-4">
+        <div className="mb-6 flex justify-center">
+          <Weather />
+        </div>
         <img src={logo} alt="Raskon Appart Logo" className="h-56 md:h-72 w-auto mx-auto object-contain drop-shadow-2xl mb-8" />
         <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
           {t('hero.subtitle')}

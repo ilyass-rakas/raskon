@@ -67,6 +67,32 @@ i18n.use(initReactI18next).init({
         'footer.description': 'Votre partenaire de confiance pour les locations d\'appartements à Kenitra, Maroc.',
         'footer.instagram': '📸 Nous Suivre sur Instagram',
         'footer.rights': 'Tous droits réservés.',
+
+        // Apartments Filtering
+        'apartments.allLocations': 'Toutes les Locations',
+        'apartments.checkAvailability': 'Vérifier la Disponibilité',
+        'apartments.noResults': 'Aucun appartement trouvé pour cette location.',
+
+        // Booking Modal
+        'booking.checkAvailability': 'Vérifier la Disponibilité',
+        'booking.name': 'Nom',
+        'booking.namePlaceholder': 'Votre nom complet',
+        'booking.email': 'Email',
+        'booking.emailPlaceholder': 'votre@email.com',
+        'booking.phone': 'Téléphone',
+        'booking.phonePlaceholder': '+212 6 XX XX XX XX',
+        'booking.checkIn': 'Date d\'arrivée',
+        'booking.checkOut': 'Date de départ',
+        'booking.submit': 'Réserver sur WhatsApp',
+
+        // Location Map
+        'location.title': 'Notre',
+        'location.subtitle': 'Localisation',
+        'location.kenitra': 'Kenitra, Maroc',
+        'location.description': 'Située au cœur de Kenitra, notre propriété offre un accès facile aux principales attractions, restaurants et transports en commun. Parfaitement positionnée pour explorer la beauté côtière de Mehdia et l\'énergie du centre-ville.',
+        'location.address': 'Adresse Principale',
+        'location.nearby': 'À Proximité',
+        'location.transportation': 'Transport',
       }
     },
     en: {
@@ -134,6 +160,32 @@ i18n.use(initReactI18next).init({
         'footer.description': 'Your trusted partner for apartment rentals in Kenitra, Morocco.',
         'footer.instagram': '📸 Follow us on Instagram',
         'footer.rights': 'All rights reserved.',
+
+        // Apartments Filtering
+        'apartments.allLocations': 'All Locations',
+        'apartments.checkAvailability': 'Check Availability',
+        'apartments.noResults': 'No apartments found for this location.',
+
+        // Booking Modal
+        'booking.checkAvailability': 'Check Availability',
+        'booking.name': 'Name',
+        'booking.namePlaceholder': 'Your full name',
+        'booking.email': 'Email',
+        'booking.emailPlaceholder': 'your@email.com',
+        'booking.phone': 'Phone',
+        'booking.phonePlaceholder': '+212 6 XX XX XX XX',
+        'booking.checkIn': 'Check-in Date',
+        'booking.checkOut': 'Check-out Date',
+        'booking.submit': 'Book on WhatsApp',
+
+        // Location Map
+        'location.title': 'Our',
+        'location.subtitle': 'Location',
+        'location.kenitra': 'Kenitra, Morocco',
+        'location.description': 'Located in the heart of Kenitra, our property offers easy access to major attractions, restaurants, and public transportation. Perfectly positioned to explore the coastal beauty of Mehdia and the energy of downtown.',
+        'location.address': 'Main Address',
+        'location.nearby': 'Nearby',
+        'location.transportation': 'Transportation',
       }
     },
     ar: {
@@ -199,6 +251,32 @@ i18n.use(initReactI18next).init({
         'footer.description': 'شريكك الموثوق في إيجار الشقق في القنيطرة بالمغرب.',
         'footer.instagram': '📸 تابعنا على إنستغرام',
         'footer.rights': 'جميع الحقوق محفوظة.',
+
+        // Apartments Filtering
+        'apartments.allLocations': 'جميع المواقع',
+        'apartments.checkAvailability': 'تحقق من التوفر',
+        'apartments.noResults': 'لم يتم العثور على شقق لهذا الموقع.',
+
+        // Booking Modal
+        'booking.checkAvailability': 'تحقق من التوفر',
+        'booking.name': 'الاسم',
+        'booking.namePlaceholder': 'اسمك الكامل',
+        'booking.email': 'البريد الإلكتروني',
+        'booking.emailPlaceholder': 'your@email.com',
+        'booking.phone': 'الهاتف',
+        'booking.phonePlaceholder': '+212 6 XX XX XX XX',
+        'booking.checkIn': 'تاريخ الوصول',
+        'booking.checkOut': 'تاريخ المغادرة',
+        'booking.submit': 'احجز على واتس آب',
+
+        // Location Map
+        'location.title': 'موقعنا',
+        'location.subtitle': 'المميز',
+        'location.kenitra': 'القنيطرة، المغرب',
+        'location.description': 'يقع في قلب القنيطرة، ويوفر العقار وصولاً سهلاً إلى المعالم الرئيسية والمطاعم والمواصلات العامة. موضع مثالي لاستكشاف جمال ساحل مهديه وحيوية وسط البلد.',
+        'location.address': 'العنوان الرئيسي',
+        'location.nearby': 'بالقرب من',
+        'location.transportation': 'المواصلات',
       }
     }
   },
