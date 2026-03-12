@@ -17,8 +17,8 @@ export default function Hero() {
           {t('hero.subtitle')}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="https://wa.me/212666802976" target="_blank" rel="noreferrer" className="bg-brand-gold text-brand-black font-bold py-3 px-8 rounded-full hover:bg-brand-gold-light transition duration-300 flex items-center justify-center gap-2"><MessageCircle className="w-5 h-5" />{t('hero.bookWhatsApp')}</a>
-          <a href="tel:+212666802976" className="border-2 border-brand-gold text-brand-gold font-bold py-3 px-8 rounded-full hover:bg-brand-gold hover:text-brand-black transition duration-300 flex items-center justify-center gap-2"><Phone className="w-5 h-5" />{t('hero.callNow')}</a>
+          <a href="https://wa.me/212666802976" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 px-6 py-3 border-2 border-brand-gold text-brand-gold font-bold uppercase tracking-widest text-sm transition duration-300 hover:bg-brand-gold hover:text-brand-black rounded-lg"><MessageCircle className="w-5 h-5" />WhatsApp</a>
+          <a href="tel:+212666802976" className="flex items-center justify-center gap-2 px-6 py-3 border-2 border-brand-gold text-brand-gold font-bold uppercase tracking-widest text-sm transition duration-300 hover:bg-brand-gold hover:text-brand-black rounded-lg"><Phone className="w-5 h-5" />Call</a>
         </div>
       </div>
     </div>

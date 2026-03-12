@@ -64,7 +64,7 @@ function ApartmentCard({ apt, t }) {
       <div className="relative group h-56 overflow-hidden">
         <img 
           src={apt.images[currentIndex]} 
-          alt={t(apt.nameKey)} 
+          alt={apt.title} 
           className="w-full h-full object-cover transition duration-300"
         />
         
@@ -99,10 +99,8 @@ function ApartmentCard({ apt, t }) {
       {/* Content */}
       <div className="p-6">
         <div className="flex justify-between items-center mb-3">
-          <h3 className="text-xl font-bold text-white">{t(apt.nameKey)}</h3>
-          <span className="text-brand-gold font-bold">{t(apt.priceKey)}</span>
+          <h3 className="text-xl font-bold text-white">{apt.title}</h3>
         </div>
-        <p className="text-gray-400 mb-6">{t(apt.specsKey)}</p>
         <button className="w-full bg-transparent border-2 border-brand-gold text-brand-gold font-bold py-2 rounded-lg hover:bg-brand-gold hover:text-brand-black transition duration-300">
           {t('apartments.viewDetails')}
         </button>
@@ -117,30 +115,22 @@ export default function ApartmentGrid() {
   const apartments = [
     {
       id: 1,
-      nameKey: 'apartments.apt1',
-      priceKey: 'apartments.apt1.price',
-      specsKey: 'apartments.apt1.specs',
+      title: 'Appartement Premium - Mehdia',
       images: [apt1_1, apt1_2, apt1_3, apt1_4, apt1_5, apt1_6, apt1_7, apt1_8, apt1_9]
     },
     {
       id: 2,
-      nameKey: 'apartments.apt2',
-      priceKey: 'apartments.apt2.price',
-      specsKey: 'apartments.apt2.specs',
+      title: 'Résidence Moderne - Centre Ville',
       images: [apt2_1, apt2_2, apt2_3, apt2_4, apt2_5, apt2_6, apt2_7, apt2_8, apt2_9, apt2_10]
     },
     {
       id: 3,
-      nameKey: 'apartments.apt3',
-      priceKey: 'apartments.apt3.price',
-      specsKey: 'apartments.apt3.specs',
+      title: 'Appartement Prestige - La Ville Haute',
       images: [apt3_1, apt3_2, apt3_3, apt3_4, apt3_5, apt3_6, apt3_7, apt3_8, apt3_9, apt3_10, apt3_11, apt3_12, apt3_13, apt3_14, apt3_15, apt3_16, apt3_17]
     },
     {
       id: 4,
-      nameKey: 'apartments.apt4',
-      priceKey: 'apartments.apt4.price',
-      specsKey: 'apartments.apt4.specs',
+      title: 'Résidence Élégance - Centre Ville',
       images: [apt4_1, apt4_2, apt4_3, apt4_4, apt4_5, apt4_6, apt4_7, apt4_8, apt4_9]
     }
   ];
