@@ -1,0 +1,26 @@
+# Raskon Appart Robots.txt
+# This file tells search engines how to crawl and index the website
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Block crawling of unnecessary files
+Disallow: *.pdf$
+Disallow: *.doc$
+Disallow: *.docx$
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Specific rules for Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Sitemaps
+Sitemap: https://raskonimmobilier.vercel.app/sitemap.xml

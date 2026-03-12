@@ -93,6 +93,39 @@ i18n.use(initReactI18next).init({
         'location.address': 'Adresse Principale',
         'location.nearby': 'À Proximité',
         'location.transportation': 'Transport',
+
+        // Testimonials
+        'testimonials.title': 'Témoignages',
+        'testimonials.subtitle': 'Découvrez ce que disent nos clients satisfaits',
+        'testimonials.review1': 'Excellent service et appartements superbes. Je reviendrai certainement!',
+        'testimonials.review2': 'Très professionnel et accommodant. L\'équipe m\'a aidé avec tous mes besoins.',
+        'testimonials.review3': 'Le meilleur rapport qualité-prix de Kenitra. Hautement recommandé!',
+        'testimonials.review4': 'Expérience exceptionnelle du début à la fin. Merci Raskon Appart!',
+
+        // Contact Form
+        'contactForm.title': 'Nous Contacter',
+        'contactForm.subtitle': 'Avez-vous des questions? Remplissez le formulaire ci-dessous.',
+        'contactForm.name': 'Nom Complet',
+        'contactForm.email': 'Email',
+        'contactForm.phone': 'Téléphone (Optionnel)',
+        'contactForm.subject': 'Sujet',
+        'contactForm.message': 'Message',
+        'contactForm.send': 'Envoyer le Message',
+        'contactForm.success': 'Merci! Votre message a été envoyé. Nous vous répondrons bientôt.',
+        'contactForm.note': 'Remarque: Votre message ouvrira votre client email par défaut.',
+
+        // House Rules
+        'houseRules.title': 'Règles de la Maison',
+        'houseRules.subtitle': 'Veuillez respecter les règles suivantes lors de votre séjour',
+
+        // Calendar
+        'calendar.title': 'Calendrier de Disponibilité',
+        'calendar.subtitle': 'Vérifiez la disponibilité de nos appartements',
+        'calendar.available': 'Disponible',
+        'calendar.booked': 'Réservé',
+        'calendar.unavailable': 'Indisponible',
+        'calendar.info': 'Cliquez sur une date disponible pour effectuer une réservation. Pour les demandes spéciales, contactez-nous via WhatsApp.',
+        'calendar.book': 'Réserver Maintenant',
       }
     },
     en: {
@@ -186,6 +219,39 @@ i18n.use(initReactI18next).init({
         'location.address': 'Main Address',
         'location.nearby': 'Nearby',
         'location.transportation': 'Transportation',
+
+        // Testimonials
+        'testimonials.title': 'Guest Testimonials',
+        'testimonials.subtitle': 'See what our satisfied clients have to say',
+        'testimonials.review1': 'Excellent service and beautiful apartments. I will definitely return!',
+        'testimonials.review2': 'Very professional and accommodating. The team helped me with all my needs.',
+        'testimonials.review3': 'The best value for money in Kenitra. Highly recommended!',
+        'testimonials.review4': 'Exceptional experience from start to finish. Thank you Raskon Appart!',
+
+        // Contact Form
+        'contactForm.title': 'Get In Touch',
+        'contactForm.subtitle': 'Have questions? Fill out the form below and we\'ll get back to you soon.',
+        'contactForm.name': 'Full Name',
+        'contactForm.email': 'Email Address',
+        'contactForm.phone': 'Phone (Optional)',
+        'contactForm.subject': 'Subject',
+        'contactForm.message': 'Message',
+        'contactForm.send': 'Send Message',
+        'contactForm.success': 'Thank you! Your message has been sent. We\'ll get back to you soon.',
+        'contactForm.note': 'Note: Your message will open your default email client.',
+
+        // House Rules
+        'houseRules.title': 'House Rules',
+        'houseRules.subtitle': 'Please respect the following rules during your stay',
+
+        // Calendar
+        'calendar.title': 'Availability Calendar',
+        'calendar.subtitle': 'Check availability for our apartments',
+        'calendar.available': 'Available',
+        'calendar.booked': 'Booked',
+        'calendar.unavailable': 'Unavailable',
+        'calendar.info': 'Click on an available date to make a reservation. For special requests, contact us directly via WhatsApp.',
+        'calendar.book': 'Book Now',
       }
     },
     ar: {
@@ -277,6 +343,39 @@ i18n.use(initReactI18next).init({
         'location.address': 'العنوان الرئيسي',
         'location.nearby': 'بالقرب من',
         'location.transportation': 'المواصلات',
+
+        // Testimonials
+        'testimonials.title': 'شهادات العملاء',
+        'testimonials.subtitle': 'اطلع على ما يقوله عملاؤنا الراضون',
+        'testimonials.review1': 'خدمة ممتازة وشقق جميلة جداً. سأعود بالتأكيد!',
+        'testimonials.review2': 'احترافي جداً وودود. ساعدتني الفريق في كل احتياجاتي.',
+        'testimonials.review3': 'أفضل قيمة مقابل المال في القنيطرة. ننصح به بقوة!',
+        'testimonials.review4': 'تجربة استثنائية من البداية إلى النهاية. شكراً راسكون أبارت!',
+
+        // Contact Form
+        'contactForm.title': 'اتصل بنا',
+        'contactForm.subtitle': 'هل لديك أسئلة؟ ملء الاستمارة أدناه وسنرد عليك قريباً.',
+        'contactForm.name': 'الاسم الكامل',
+        'contactForm.email': 'عنوان البريد الإلكتروني',
+        'contactForm.phone': 'الهاتف (اختياري)',
+        'contactForm.subject': 'الموضوع',
+        'contactForm.message': 'الرسالة',
+        'contactForm.send': 'إرسال الرسالة',
+        'contactForm.success': 'شكراً! تم إرسال رسالتك. سنرد عليك قريباً.',
+        'contactForm.note': 'ملاحظة: ستفتح رسالتك برنامج البريد الإلكتروني الافتراضي.',
+
+        // House Rules
+        'houseRules.title': 'قواعد الشقة',
+        'houseRules.subtitle': 'يرجى احترام القواعد التالية أثناء إقامتك',
+
+        // Calendar
+        'calendar.title': 'تقويم التوفر',
+        'calendar.subtitle': 'تحقق من توفر شققنا',
+        'calendar.available': 'متاح',
+        'calendar.booked': 'محجوز',
+        'calendar.unavailable': 'غير متاح',
+        'calendar.info': 'انقر على تاريخ متاح لإجراء حجز. للحجوزات الخاصة، اتصل بنا عبر WhatsApp.',
+        'calendar.book': 'احجز الآن',
       }
     }
   },

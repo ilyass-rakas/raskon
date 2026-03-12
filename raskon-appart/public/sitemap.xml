@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Home Page -->
+  <url>
+    <loc>https://raskonimmobilier.vercel.app/</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Terms & Conditions -->
+  <url>
+    <loc>https://raskonimmobilier.vercel.app/terms</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://raskonimmobilier.vercel.app/privacy</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- House Rules -->
+  <url>
+    <loc>https://raskonimmobilier.vercel.app/house-rules</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Apartment 1 -->
+  <url>
+    <loc>https://raskonimmobilier.vercel.app/#apartment-1</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://raskonimmobilier.vercel.app/src/assets/apt1_1.jpg</image:loc>
+      <image:title>Premium Center Studio - Mehdia</image:title>
+    </image:image>
+  </url>
+
+  <!-- Apartment 2 -->
+  <url>
+    <loc>https://raskonimmobilier.vercel.app/#apartment-2</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://raskonimmobilier.vercel.app/src/assets/apt2_1.jpg</image:loc>
+      <image:title>Résidence Moderne - Centre Ville</image:title>
+    </image:image>
+  </url>
+
+  <!-- Apartment 3 -->
+  <url>
+    <loc>https://raskonimmobilier.vercel.app/#apartment-3</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://raskonimmobilier.vercel.app/src/assets/apt3_1.jpg</image:loc>
+      <image:title>Appartement Prestige - La Ville Haute</image:title>
+    </image:image>
+  </url>
+
+  <!-- Apartment 4 -->
+  <url>
+    <loc>https://raskonimmobilier.vercel.app/#apartment-4</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://raskonimmobilier.vercel.app/src/assets/apt4_1.jpg</image:loc>
+      <image:title>Résidence Élégance - Centre Ville</image:title>
+    </image:image>
+  </url>
+</urlset>

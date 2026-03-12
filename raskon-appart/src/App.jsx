@@ -7,6 +7,7 @@ import Footer from './Footer';
 import Home from './pages/Home';
 import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
+import HouseRules from './pages/HouseRules';
 
 function App() {
   const { i18n } = useTranslation();
@@ -50,6 +51,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/house-rules" element={<HouseRules />} />
         </Routes>
 
         <Footer />

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ChevronLeft, ChevronRight, Share2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Share2, CheckCircle } from 'lucide-react';
 import BookingModal from './BookingModal';
 import Lightbox from './Lightbox';
 import apt1_1 from './assets/apt1_1.jpg';
@@ -110,8 +110,15 @@ function ApartmentCard({ apt, t }) {
 
         {/* Content */}
         <div className="p-6">
-          <div className="flex justify-between items-center mb-3">
-            <h3 className="text-xl font-bold text-white flex-1">{apt.title}</h3>
+          <div className="flex justify-between items-start mb-3">
+            <div className="flex-1">
+              <div className="flex items-center gap-2 mb-2">
+                <h3 className="text-xl font-bold text-white">{apt.title}</h3>
+                {apt.verified && (
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" title="Verified property" />
+                )}
+              </div>
+            </div>
             <button 
               onClick={() => {
                 const shareText = `Check out ${apt.title} on Raskon Appart!`;
@@ -128,7 +135,7 @@ function ApartmentCard({ apt, t }) {
                   alert('Link copied to clipboard!');
                 }
               }}
-              className="ml-2 text-brand-gold hover:text-brand-gold-light transition"
+              className="ml-2 text-brand-gold hover:text-brand-gold-light transition flex-shrink-0"
               aria-label="Share apartment"
               title="Share this apartment"
             >
@@ -169,24 +176,28 @@ export default function ApartmentGrid() {
       id: 1,
       title: 'Appartement Premium - Mehdia',
       location: 'Mehdia',
+      verified: true,
       images: [apt1_1, apt1_2, apt1_3, apt1_4, apt1_5, apt1_6, apt1_7, apt1_8, apt1_9]
     },
     {
       id: 2,
       title: 'Résidence Moderne - Centre Ville',
       location: 'Centre Ville',
+      verified: true,
       images: [apt2_1, apt2_2, apt2_3, apt2_4, apt2_5, apt2_6, apt2_7, apt2_8, apt2_9, apt2_10]
     },
     {
       id: 3,
       title: 'Appartement Prestige - La Ville Haute',
       location: 'La Ville Haute',
+      verified: true,
       images: [apt3_1, apt3_2, apt3_3, apt3_4, apt3_5, apt3_6, apt3_7, apt3_8, apt3_9, apt3_10, apt3_11, apt3_12, apt3_13, apt3_14, apt3_15, apt3_16, apt3_17]
     },
     {
       id: 4,
       title: 'Résidence Élégance - Centre Ville',
       location: 'Centre Ville',
+      verified: true,
       images: [apt4_1, apt4_2, apt4_3, apt4_4, apt4_5, apt4_6, apt4_7, apt4_8, apt4_9]
     }
   ];
