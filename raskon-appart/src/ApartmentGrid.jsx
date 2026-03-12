@@ -37,6 +37,15 @@ import apt3_14 from './assets/apt3_14.jpg';
 import apt3_15 from './assets/apt3_15.jpg';
 import apt3_16 from './assets/apt3_16.jpg';
 import apt3_17 from './assets/apt3_17.jpg';
+import apt4_1 from './assets/apt4_1.jpg';
+import apt4_2 from './assets/apt4_2.jpg';
+import apt4_3 from './assets/apt4_3.jpg';
+import apt4_4 from './assets/apt4_4.jpg';
+import apt4_5 from './assets/apt4_5.jpg';
+import apt4_6 from './assets/apt4_6.jpg';
+import apt4_7 from './assets/apt4_7.jpg';
+import apt4_8 from './assets/apt4_8.jpg';
+import apt4_9 from './assets/apt4_9.jpg';
 
 function ApartmentCard({ apt, t }) {
   const [currentIndex, setCurrentIndex] = useState(0);
