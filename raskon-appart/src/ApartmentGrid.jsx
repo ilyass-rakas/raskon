@@ -135,6 +135,13 @@ export default function ApartmentGrid() {
       priceKey: 'apartments.apt3.price',
       specsKey: 'apartments.apt3.specs',
       images: [apt3_1, apt3_2, apt3_3, apt3_4, apt3_5, apt3_6, apt3_7, apt3_8, apt3_9, apt3_10, apt3_11, apt3_12, apt3_13, apt3_14, apt3_15, apt3_16, apt3_17]
+    },
+    {
+      id: 4,
+      nameKey: 'apartments.apt4',
+      priceKey: 'apartments.apt4.price',
+      specsKey: 'apartments.apt4.specs',
+      images: [apt4_1, apt4_2, apt4_3, apt4_4, apt4_5, apt4_6, apt4_7, apt4_8, apt4_9]
     }
   ];
 

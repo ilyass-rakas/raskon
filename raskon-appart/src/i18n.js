@@ -40,6 +40,9 @@ i18n.use(initReactI18next).init({
         'apartments.apt3': 'Penthouse Luxe',
         'apartments.apt3.specs': '3 Chambres • 2 Salles de Bain • Toit',
         'apartments.apt3.price': '850 DH / nuit',
+        'apartments.apt4': 'Penthouse Grand Luxe',
+        'apartments.apt4.specs': '3 Chambres • 3 Salles de Bain • Terrasse',
+        'apartments.apt4.price': '1200 DH / nuit',
         
         // Reviews
         'reviews.title': 'Expériences',
@@ -103,6 +106,9 @@ i18n.use(initReactI18next).init({
         'apartments.apt3': 'Luxury Penthouse',
         'apartments.apt3.specs': '3 Beds • 2 Baths • Rooftop',
         'apartments.apt3.price': '850 DH / night',
+        'apartments.apt4': 'Grand Luxury Penthouse',
+        'apartments.apt4.specs': '3 Beds • 3 Baths • Terrace',
+        'apartments.apt4.price': '1200 DH / night',
         
         // Reviews
         'reviews.title': 'Guest',
@@ -166,8 +172,9 @@ i18n.use(initReactI18next).init({
         'apartments.apt2.price': '600 درهم / ليلة',
         'apartments.apt3': 'بنتهاوس فاخر',
         'apartments.apt3.specs': '3 أسرة • حمامان • سطح',
-        'apartments.apt3.price': '850 درهم / ليلة',
-        
+        'apartments.apt3.price': '850 درهم / ليلة',        'apartments.apt4': 'بنتهاوس فاخر جداً',
+        'apartments.apt4.specs': '3 غرف نوم • 3 حمامات • شرفة',
+        'apartments.apt4.price': '1200 درهم / ليلة',        
         // Reviews
         'reviews.title': 'تجارب',
         'reviews.guest': 'الضيوف',
