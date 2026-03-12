@@ -1,9 +1,7 @@
-import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { ChevronLeft, CheckCircle, AlertCircle, Clock, Utensils, Wifi } from 'lucide-react';
+import { ChevronLeft, CheckCircle, Clock, Utensils, Wifi, AlertCircle } from 'lucide-react';
 
 export default function HouseRules() {
-  const { t } = useTranslation();
 
   const rules = [
     {
