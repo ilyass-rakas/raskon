@@ -1,19 +1,58 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, RefreshCw } from 'lucide-react';
 
 export default function AvailabilityCalendar() {
   const { t } = useTranslation();
   const [currentDate, setCurrentDate] = useState(new Date(2026, 2)); // March 2026
-  
-  // Simulate booked dates (in real app, would come from backend)
-  const bookedDates = [
-    '2026-03-05', '2026-03-06', '2026-03-07',
-    '2026-03-15', '2026-03-16', '2026-03-17', '2026-03-18',
-    '2026-03-25', '2026-03-26',
-    '2026-04-10', '2026-04-11', '2026-04-12',
-    '2026-04-20', '2026-04-21', '2026-04-22', '2026-04-23', '2026-04-24',
-  ];
+  const [bookedDates, setBookedDates] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [lastSyncTime, setLastSyncTime] = useState(null);
+
+  // Fetch booked dates from backend API
+  const fetchBookedDates = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      
+      // Replace with your actual API endpoint
+      const response = await fetch('/api/availability/booked-dates');
+      
+      if (!response.ok) {
+        throw new Error('Failed to fetch availability data');
+      }
+      
+      const data = await response.json();
+      setBookedDates(data.bookedDates || []);
+      setLastSyncTime(new Date());
+    } catch (err) {
+      // Fallback to hardcoded dates if API is not available
+      console.warn('Using fallback booked dates:', err.message);
+      setBookedDates([
+        '2026-03-05', '2026-03-06', '2026-03-07',
+        '2026-03-15', '2026-03-16', '2026-03-17', '2026-03-18',
+        '2026-03-25', '2026-03-26',
+        '2026-04-10', '2026-04-11', '2026-04-12',
+        '2026-04-20', '2026-04-21', '2026-04-22', '2026-04-23', '2026-04-24',
+      ]);
+      setLastSyncTime(new Date());
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Initial fetch and auto-refresh every 5 minutes (300000 ms)
+  useEffect(() => {
+    fetchBookedDates();
+    
+    const syncInterval = setInterval(() => {
+      fetchBookedDates();
+    }, 300000); // Sync every 5 minutes
+
+    return () => clearInterval(syncInterval);
+  }, []);
 
   const getDaysInMonth = (date) => {
     return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
@@ -80,12 +119,22 @@ export default function AvailabilityCalendar() {
                 <ChevronLeft className="w-6 h-6" />
               </button>
               <h3 className="text-2xl font-bold text-white">{monthName}</h3>
-              <button
-                onClick={handleNextMonth}
-                className="text-brand-gold hover:text-brand-gold-light transition"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
+              <div className="flex items-center gap-4">
+                <button
+                  onClick={handleNextMonth}
+                  className="text-brand-gold hover:text-brand-gold-light transition"
+                >
+                  <ChevronRight className="w-6 h-6" />
+                </button>
+                <button
+                  onClick={fetchBookedDates}
+                  disabled={loading}
+                  className="text-brand-gold hover:text-brand-gold-light transition disabled:opacity-50"
+                  title="Refresh availability"
+                >
+                  <RefreshCw className={`w-5 h-5 ${loading ? 'animate-spin' : ''}`} />
+                </button>
+              </div>
             </div>
 
             {/* Day Headers */}
@@ -145,8 +194,27 @@ export default function AvailabilityCalendar() {
               </div>
             </div>
 
-            {/* Info Box */}
+            {/* Sync Status */}
             <div className="mt-8 pt-8 border-t border-gray-600">
+              <div className="mb-4">
+                <p className="text-xs text-gray-400 mb-2">Sync Status</p>
+                <div className="flex items-center gap-2">
+                  <div className={`w-2 h-2 rounded-full ${loading ? 'bg-yellow-500 animate-pulse' : error ? 'bg-red-500' : 'bg-green-500'}`}></div>
+                  <span className="text-sm text-gray-300">
+                    {loading ? 'Syncing...' : error ? 'Sync failed' : 'Synced'}
+                  </span>
+                </div>
+              </div>
+              
+              {lastSyncTime && (
+                <p className="text-xs text-gray-500">
+                  Last sync: {lastSyncTime.toLocaleTimeString()}
+                </p>
+              )}
+            </div>
+
+            {/* Info Box */}
+            <div className="mt-6 pt-6 border-t border-gray-600">
               <p className="text-sm text-gray-400">
                 {t('calendar.info')}
               </p>
