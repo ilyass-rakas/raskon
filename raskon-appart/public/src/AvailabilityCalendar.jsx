@@ -4,31 +4,54 @@ import { ChevronLeft, ChevronRight, RefreshCw } from 'lucide-react';
 
 export default function AvailabilityCalendar() {
   const { t } = useTranslation();
-  // FIXED: Initialize with the current real-world date instead of hardcoded March 2026
   const [currentDate, setCurrentDate] = useState(new Date()); 
   const [bookedDates, setBookedDates] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [lastSyncTime, setLastSyncTime] = useState(null);
 
-  // FIXED: Wrapped in useCallback to prevent unnecessary re-renders
+  // MOCK API: Generates random booked dates instead of relying on a real backend
   const fetchBookedDates = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
       
-      const response = await fetch('/api/availability/booked-dates');
+      // 1. Simulate a realistic network loading delay (between 0.5 and 1.5 seconds)
+      await new Promise(resolve => setTimeout(resolve, 500 + Math.random() * 1000));
       
-      if (!response.ok) {
-        throw new Error('Failed to fetch availability data');
+      // 2. Generate random bookings
+      const newBookedDates = [];
+      const dateToGenerate = new Date();
+      const currentYear = dateToGenerate.getFullYear();
+      const currentMonth = dateToGenerate.getMonth();
+      
+      // Generate random bookings for the current month and the next 3 months
+      for (let m = currentMonth; m <= currentMonth + 3; m++) {
+        const targetYear = currentYear + Math.floor(m / 12);
+        const targetMonth = m % 12;
+        const daysInMonth = new Date(targetYear, targetMonth + 1, 0).getDate();
+        
+        // Randomly choose between 5 to 10 days to be "booked" in this month
+        const numberOfBookedDays = Math.floor(Math.random() * 6) + 5; 
+        
+        for (let i = 0; i < numberOfBookedDays; i++) {
+          const randomDay = Math.floor(Math.random() * daysInMonth) + 1;
+          const monthStr = String(targetMonth + 1).padStart(2, '0');
+          const dayStr = String(randomDay).padStart(2, '0');
+          const dateStr = `${targetYear}-${monthStr}-${dayStr}`;
+          
+          // Add to our booked list if it's not already there
+          if (!newBookedDates.includes(dateStr)) {
+            newBookedDates.push(dateStr);
+          }
+        }
       }
       
-      const data = await response.json();
-      setBookedDates(data.bookedDates || []);
+      // 3. Update the state to look like a successful API response
+      setBookedDates(newBookedDates);
       setLastSyncTime(new Date());
     } catch (err) {
-      // FIXED: Fallback to an empty array instead of hardcoded dates if API is unreachable
-      console.warn('API unavailable:', err.message);
+      console.warn('Mock sync failed:', err.message);
       setBookedDates([]);
       setLastSyncTime(new Date());
       setError(err.message);
