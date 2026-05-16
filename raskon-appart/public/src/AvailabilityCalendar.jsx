@@ -1,22 +1,22 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ChevronLeft, ChevronRight, RefreshCw } from 'lucide-react';
 
 export default function AvailabilityCalendar() {
   const { t } = useTranslation();
-  const [currentDate, setCurrentDate] = useState(new Date(2026, 2)); // March 2026
+  // FIXED: Initialize with the current real-world date instead of hardcoded March 2026
+  const [currentDate, setCurrentDate] = useState(new Date()); 
   const [bookedDates, setBookedDates] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [lastSyncTime, setLastSyncTime] = useState(null);
 
-  // Fetch booked dates from backend API
-  const fetchBookedDates = async () => {
+  // FIXED: Wrapped in useCallback to prevent unnecessary re-renders
+  const fetchBookedDates = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
       
-      // Replace with your actual API endpoint
       const response = await fetch('/api/availability/booked-dates');
       
       if (!response.ok) {
@@ -27,21 +27,15 @@ export default function AvailabilityCalendar() {
       setBookedDates(data.bookedDates || []);
       setLastSyncTime(new Date());
     } catch (err) {
-      // Fallback to hardcoded dates if API is not available
-      console.warn('Using fallback booked dates:', err.message);
-      setBookedDates([
-        '2026-03-05', '2026-03-06', '2026-03-07',
-        '2026-03-15', '2026-03-16', '2026-03-17', '2026-03-18',
-        '2026-03-25', '2026-03-26',
-        '2026-04-10', '2026-04-11', '2026-04-12',
-        '2026-04-20', '2026-04-21', '2026-04-22', '2026-04-23', '2026-04-24',
-      ]);
+      // FIXED: Fallback to an empty array instead of hardcoded dates if API is unreachable
+      console.warn('API unavailable:', err.message);
+      setBookedDates([]);
       setLastSyncTime(new Date());
       setError(err.message);
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   // Initial fetch and auto-refresh every 5 minutes (300000 ms)
   useEffect(() => {
@@ -49,10 +43,10 @@ export default function AvailabilityCalendar() {
     
     const syncInterval = setInterval(() => {
       fetchBookedDates();
-    }, 300000); // Sync every 5 minutes
+    }, 300000);
 
     return () => clearInterval(syncInterval);
-  }, []);
+  }, [fetchBookedDates]);
 
   const getDaysInMonth = (date) => {
     return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();

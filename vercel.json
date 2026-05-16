@@ -1,7 +1,7 @@
 {
   "installCommand": "cd raskon-appart && npm install",
   "buildCommand": "cd raskon-appart && npm run build",
-  "outputDirectory": "raskon-appart/dist",
+  "outputDirectory": "raskon-appart/public/dist",
   "rewrites": [
     {
       "source": "/(.*)",
