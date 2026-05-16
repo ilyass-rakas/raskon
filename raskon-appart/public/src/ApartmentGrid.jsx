@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { ChevronLeft, ChevronRight, Share2, CheckCircle } from 'lucide-react';
 import BookingModal from './BookingModal';
 import Lightbox from './Lightbox';
+
 import apt1_1 from './assets/apt1_1.jpg';
 import apt1_2 from './assets/apt1_2.jpg';
 import apt1_3 from './assets/apt1_3.jpg';
@@ -12,6 +13,7 @@ import apt1_6 from './assets/apt1_6.jpg';
 import apt1_7 from './assets/apt1_7.jpg';
 import apt1_8 from './assets/apt1_8.jpg';
 import apt1_9 from './assets/apt1_9.jpg';
+
 import apt2_1 from './assets/apt2_1.jpg';
 import apt2_2 from './assets/apt2_2.jpg';
 import apt2_3 from './assets/apt2_3.jpg';
@@ -22,6 +24,7 @@ import apt2_7 from './assets/apt2_7.jpg';
 import apt2_8 from './assets/apt2_8.jpg';
 import apt2_9 from './assets/apt2_9.jpg';
 import apt2_10 from './assets/apt2_10.jpg';
+
 import apt3_1 from './assets/apt3_1.jpg';
 import apt3_2 from './assets/apt3_2.jpg';
 import apt3_3 from './assets/apt3_3.jpg';
@@ -39,6 +42,7 @@ import apt3_14 from './assets/apt3_14.jpg';
 import apt3_15 from './assets/apt3_15.jpg';
 import apt3_16 from './assets/apt3_16.jpg';
 import apt3_17 from './assets/apt3_17.jpg';
+
 import apt4_1 from './assets/apt4_1.jpg';
 import apt4_2 from './assets/apt4_2.jpg';
 import apt4_3 from './assets/apt4_3.jpg';
@@ -69,7 +73,7 @@ function ApartmentCard({ apt, t }) {
         <div className="relative group h-56 overflow-hidden cursor-pointer" onClick={() => setIsLightboxOpen(true)}>
           <img 
             src={apt.images[currentIndex]} 
-            alt={apt.title}
+            alt={t(apt.titleKey)}
             loading="lazy"
             className="w-full h-full object-cover transition duration-300 hover:scale-105"
           />
@@ -113,24 +117,24 @@ function ApartmentCard({ apt, t }) {
           <div className="flex justify-between items-start mb-3">
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-2">
-                <h3 className="text-xl font-bold text-white">{apt.title}</h3>
+                <h3 className="text-xl font-bold text-brand-gold">{t(apt.titleKey)}</h3>
                 {apt.verified && (
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" title="Verified property" />
                 )}
               </div>
+              <p className="text-gray-400 italic mb-4">{t(apt.subtitleKey)}</p>
             </div>
             <button 
               onClick={() => {
-                const shareText = `Check out ${apt.title} on Raskon Appart!`;
+                const shareText = `Check out ${t(apt.titleKey)} on Raskon Appart!`;
                 const shareUrl = window.location.href;
                 if (navigator.share) {
                   navigator.share({
-                    title: apt.title,
+                    title: t(apt.titleKey),
                     text: shareText,
                     url: shareUrl
                   }).catch(err => console.log('Share error:', err));
                 } else {
-                  // Fallback: Copy to clipboard
                   navigator.clipboard.writeText(`${shareText} ${shareUrl}`);
                   alert('Link copied to clipboard!');
                 }
@@ -154,7 +158,7 @@ function ApartmentCard({ apt, t }) {
       <BookingModal 
         isOpen={isBookingOpen} 
         onClose={() => setIsBookingOpen(false)} 
-        apartmentTitle={apt.title}
+        apartmentTitle={t(apt.titleKey)}
       />
 
       <Lightbox 
@@ -174,38 +178,40 @@ export default function ApartmentGrid() {
   const apartments = [
     {
       id: 1,
-      title: 'Appartement Premium - Mehdia',
+      titleKey: 'apartments.apt1_title',
+      subtitleKey: 'apartments.apt1_subtitle',
       location: 'Mehdia',
       verified: true,
       images: [apt1_1, apt1_2, apt1_3, apt1_4, apt1_5, apt1_6, apt1_7, apt1_8, apt1_9]
     },
     {
       id: 2,
-      title: 'Résidence Moderne - Centre Ville',
+      titleKey: 'apartments.apt2_title',
+      subtitleKey: 'apartments.apt2_subtitle',
       location: 'Centre Ville',
       verified: true,
       images: [apt2_1, apt2_2, apt2_3, apt2_4, apt2_5, apt2_6, apt2_7, apt2_8, apt2_9, apt2_10]
     },
     {
       id: 3,
-      title: 'Appartement Prestige - La Ville Haute',
+      titleKey: 'apartments.apt3_title',
+      subtitleKey: 'apartments.apt3_subtitle',
       location: 'La Ville Haute',
       verified: true,
       images: [apt3_1, apt3_2, apt3_3, apt3_4, apt3_5, apt3_6, apt3_7, apt3_8, apt3_9, apt3_10, apt3_11, apt3_12, apt3_13, apt3_14, apt3_15, apt3_16, apt3_17]
     },
     {
       id: 4,
-      title: 'Résidence Élégance - Centre Ville',
+      titleKey: 'apartments.apt4_title',
+      subtitleKey: 'apartments.apt4_subtitle',
       location: 'Centre Ville',
       verified: true,
       images: [apt4_1, apt4_2, apt4_3, apt4_4, apt4_5, apt4_6, apt4_7, apt4_8, apt4_9]
     }
   ];
 
-  // Get unique locations
   const locations = [...new Set(apartments.map(apt => apt.location))];
 
-  // Filter apartments by selected location
   const filteredApartments = selectedLocation 
     ? apartments.filter(apt => apt.location === selectedLocation)
     : apartments;
@@ -251,7 +257,6 @@ export default function ApartmentGrid() {
           ))}
         </div>
 
-        {/* No Results Message */}
         {filteredApartments.length === 0 && (
           <p className="text-center text-gray-400 text-lg">
             {t('apartments.noResults')}

@@ -4,7 +4,7 @@ import logo from './assets/logo.png';
 
 export default function Navbar() {
   const { t, i18n } = useTranslation();
-  const [isOpen, setIsOpen] = useState(false); // Controls the mobile menu
+  const [isOpen, setIsOpen] = useState(false);
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
